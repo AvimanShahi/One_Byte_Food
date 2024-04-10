@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2024 at 08:04 AM
+-- Generation Time: Apr 10, 2024 at 05:17 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `one-byte-food`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_cred`
+--
+
+CREATE TABLE `admin_cred` (
+  `sr_no` int(11) NOT NULL,
+  `admin_name` varchar(150) NOT NULL,
+  `admin_pass` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin_cred`
+--
+
+INSERT INTO `admin_cred` (`sr_no`, `admin_name`, `admin_pass`) VALUES
+(1, 'Ram', '12345');
 
 -- --------------------------------------------------------
 
@@ -45,11 +64,18 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `phone_number`, `address`, `date_of_birth`, `password`, `created_at`, `verification_code`, `verified`) VALUES
-(68, 'aviman ', 'pukar123@gmail.com', '9848654512', 'Bhaktkekopul, chabel', '2004-02-02', 'avi123###', '2024-04-09 05:42:29', NULL, 0);
+(68, 'aviman ', 'pukar123@gmail.com', '9848654512', 'Bhaktkekopul, chabel', '2004-02-02', 'avi123###', '2024-04-09 05:42:29', NULL, 0),
+(69, 'Aviman ', 'avibikram@gmail.com', '9848654512', 'Bhaktkekopul, chabel', '2001-02-02', 'avi123', '2024-04-10 14:07:45', NULL, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_cred`
+--
+ALTER TABLE `admin_cred`
+  ADD PRIMARY KEY (`sr_no`);
 
 --
 -- Indexes for table `user`
@@ -62,10 +88,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_cred`
+--
+ALTER TABLE `admin_cred`
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
